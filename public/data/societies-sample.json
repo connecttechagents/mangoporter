@@ -1,0 +1,72 @@
+[
+  {
+    "society_id": "soc_001",
+    "society_name": "Prestige Lakeside Habitat",
+    "area": "Whitefield",
+    "status": "active",
+    "waLink": "https://chat.whatsapp.com/EXAMPLE1"
+  },
+  {
+    "society_id": "soc_002",
+    "society_name": "Brigade Metropolis",
+    "area": "Whitefield",
+    "status": "active",
+    "waLink": "https://chat.whatsapp.com/EXAMPLE2"
+  },
+  {
+    "society_id": "soc_003",
+    "society_name": "Sobha Dream Acres",
+    "area": "Balagere",
+    "status": "active",
+    "waLink": ""
+  },
+  {
+    "society_id": "soc_004",
+    "society_name": "Purva Windermere",
+    "area": "Pallikaranai",
+    "status": "upcoming",
+    "waLink": ""
+  },
+  {
+    "society_id": "soc_005",
+    "society_name": "Mantri Serenity",
+    "area": "Kanakapura Road",
+    "status": "active",
+    "waLink": "https://chat.whatsapp.com/EXAMPLE5"
+  },
+  {
+    "society_id": "soc_006",
+    "society_name": "Salarpuria Sattva Greenage",
+    "area": "Hosur Road",
+    "status": "active",
+    "waLink": "https://chat.whatsapp.com/EXAMPLE6"
+  },
+  {
+    "society_id": "soc_007",
+    "society_name": "Embassy Springs",
+    "area": "Devanahalli",
+    "status": "upcoming",
+    "waLink": ""
+  },
+  {
+    "society_id": "soc_008",
+    "society_name": "Godrej Woodsman Estate",
+    "area": "Hebbal",
+    "status": "active",
+    "waLink": "https://chat.whatsapp.com/EXAMPLE8"
+  },
+  {
+    "society_id": "soc_009",
+    "society_name": "Adarsh Palm Retreat",
+    "area": "Bellandur",
+    "status": "active",
+    "waLink": "https://chat.whatsapp.com/EXAMPLE9"
+  },
+  {
+    "society_id": "soc_010",
+    "society_name": "Total Environment Windmills",
+    "area": "Whitefield",
+    "status": "upcoming",
+    "waLink": ""
+  }
+]
