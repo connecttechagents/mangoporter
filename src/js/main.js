@@ -8,6 +8,7 @@ import { initFooter } from './components/footer.js';
 import { initWhatsAppFAB } from './components/whatsapp-fab.js';
 
 import { fetchSocieties, searchSocieties } from './services/society-data.js';
+import { fetchSiteConfig } from './services/site-config.js';
 import { sendEmail } from './services/email-service.js';
 
 // --- Initialize Shared Components ---
@@ -18,7 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initSocietyFinder();
   initContactForms();
+  initSiteConfig();
 });
+
+// --- Dynamic Site Config ---
+async function initSiteConfig() {
+  try {
+    const config = await fetchSiteConfig();
+    const batchData = config['Current Batch'];
+    if (batchData) {
+      const headerIndicator = document.getElementById('header-batch-indicator');
+      if (headerIndicator) {
+        headerIndicator.textContent = `Current batch: ${batchData} | Orders close soon!`;
+        const marqueeContainer = document.getElementById('header-marquee-container');
+        if (marqueeContainer) {
+          marqueeContainer.classList.remove('hidden');
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Failed to load site config:', error);
+  }
+}
 
 // --- Scroll Animations (Intersection Observer) ---
 function initScrollAnimations() {

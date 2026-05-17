@@ -28,80 +28,40 @@
         </div>
       </section>
 
-      <!-- How it Works Intro -->
-      <section class="drops-intro py-5xl">
-        <div class="container">
-          <div class="grid grid-2 align-center gap-5xl">
-            <div class="drops-text reveal">
-              <h2>Join Your Society WhatsApp Group</h2>
-              <p class="lead">We coordinate all our deliveries through society-specific WhatsApp groups to ensure freshness and predictable quality.</p>
-              <p>Each group coordinates delivery dates, single-variety batch details, pricing, and gate-level distribution for its members.</p>
-              <ul class="flex flex-column gap-md mt-lg">
-                <li class="flex align-center gap-sm">📢 <strong>Real-time updates</strong> on harvest dates.</li>
-                <li class="flex align-center gap-sm">🗳️ <strong>Community orders</strong> for maximum freshness.</li>
-                <li class="flex align-center gap-sm">🥭 <strong>Single variety drops</strong> for quality control.</li>
-              </ul>
-            </div>
-            <div class="drops-visual reveal">
-               <div class="video-placeholder rounded-lg shadow-xl">
-                  <img src="/images/whatsapp-collaboration.png" alt="Community WhatsApp Group" class="w-full h-full object-cover">
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Society Finder -->
-      <section id="society-finder" class="society-finder-section bg-cream py-5xl">
-        <div class="container">
-          <div class="section-header text-center mb-4xl reveal">
-            <h2>Find Your Society</h2>
-            <p>Search for your society or area below to see if a drop is planned.</p>
+      <!-- Community Drops Hub -->
+      <section class="drops-hub py-3xl">
+        <div class="container max-w-700">
+          <div class="text-center mb-xl reveal">
+            <h2>Search your society to join the WhatsApp group for batch updates and ordering.</h2>
+            <p class="lead text-ink-light">We deliver mangoes directly to society gates through coordinated community batches.</p>
           </div>
           
-          <div class="finder-container reveal">
-            <div class="search-box mb-2xl">
+          <div id="society-finder" class="finder-container reveal mb-3xl">
+            <div class="search-box mb-xl">
                <input type="text" id="society-search" placeholder="Type your society or area..." class="w-full search-input">
             </div>
 
             <!-- Result States (Hidden by default, shown via JS) -->
-            <div id="active-state" class="result-card card p-3xl reveal border-green">
-               <div class="flex align-center gap-lg">
-                  <div class="fs-4xl">✅</div>
-                  <div>
-                    <h3 class="mb-sm">Active community drop!</h3>
-                    <p>Join your society WhatsApp group for updates and ordering.</p>
-                    <a href="#" class="btn btn-primary mt-md">Join Society WhatsApp Group</a>
-                  </div>
-               </div>
+            <div id="active-state" class="result-card card p-xl reveal border-green hidden">
+               <!-- Content injected by main.js -->
             </div>
 
-            <div id="not-listed-state" class="result-card card p-3xl reveal border-mango">
-               <div class="flex align-center gap-lg">
+            <div id="not-listed-state" class="result-card card p-xl reveal border-mango hidden">
+               <div class="flex align-center gap-md">
                   <div class="fs-4xl">⏳</div>
                   <div>
                     <h3 class="mb-sm">Society not listed yet</h3>
-                    <p>Let us know — we’ll plan a drop when enough interest is available in your area.</p>
-                    <button class="btn btn-secondary mt-md" onclick="document.getElementById('request-form').scrollIntoView({behavior: 'smooth'})">Request a Community Drop</button>
+                    <p style="font-size: 0.9rem;">Gather interest from your neighbors and let us know. We'll plan a drop when enough interest is available in your area.</p>
                   </div>
                </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Request Drop Form -->
-      <section id="request-form" class="request-form-section py-5xl">
-        <div class="container py-xl">
-          <div class="grid grid-2 gap-5xl align-center">
-             <div class="form-intro reveal">
-                <span class="badge badge-upcoming">Interest Form</span>
-                <h2>Request a New Community Drop</h2>
-                <p class="lead">Don't see your society? Gather interest from your neighbors and let us know.</p>
-                <p>We need a minimum volume to ensure direct transit from our farm. Once we have enough households interested, we'll reach out to coordinate the first drop.</p>
-             </div>
-             <div class="form-container card p-4xl shadow-2xl reveal">
-                <form id="drop-request-form" class="flex flex-column gap-lg">
+          
+          <div class="reveal">
+            <details class="accordion">
+              <summary>Request a New Community Drop</summary>
+              <div class="accordion-content">
+                <form id="drop-request-form" class="flex flex-column gap-md mt-sm">
                    <div class="form-group flex flex-column gap-sm">
                       <label for="name">Name</label>
                       <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -126,15 +86,17 @@
                       <label for="message">Message (optional)</label>
                       <textarea id="message" name="message" rows="3" placeholder="Any specific requirements or questions?"></textarea>
                    </div>
-                   <button type="submit" class="btn btn-primary btn-lg mt-md">Request Drop</button>
+                   <button type="submit" class="btn btn-primary mt-sm">Request Drop</button>
                 </form>
-                <div id="form-success" class="hidden text-center py-2xl">
-                   <div class="fs-4xl mb-md">🙌</div>
+                <div id="form-success" class="hidden text-center py-xl">
+                   <div class="fs-3xl mb-sm">🙌</div>
                    <h3>Thanks!</h3>
                    <p>We have received your request and will contact you on WhatsApp soon.</p>
                 </div>
-             </div>
+              </div>
+            </details>
           </div>
+
         </div>
       </section>
     </main>

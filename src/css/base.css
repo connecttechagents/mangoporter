@@ -32,6 +32,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--fw-bold);
   line-height: var(--lh-tight);
   color: var(--color-ink);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 h1 { font-size: var(--fs-4xl); }
@@ -130,6 +132,7 @@ section {
 
 .flex { display: flex; }
 .flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
 .align-center { align-items: center; }
 .justify-center { justify-content: center; }
 .text-center { text-align: center; }
@@ -144,6 +147,10 @@ section {
 /* --- Spacing Utilities --- */
 .pt-xl { padding-top: var(--space-xl); }
 .pb-xl { padding-bottom: var(--space-xl); }
+.py-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+.py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+.py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+.py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
 .py-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
 .py-2xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
 .py-3xl { padding-top: var(--space-3xl); padding-bottom: var(--space-3xl); }
@@ -165,7 +172,9 @@ section {
 /* --- Color Utilities --- */
 .bg-ink { background-color: var(--color-ink) !important; }
 .bg-cream { background-color: var(--color-bg) !important; }
+.bg-white { background-color: var(--color-white) !important; }
 .bg-mango-light { background-color: var(--color-mango-light) !important; }
+.bg-green-light { background-color: var(--color-green-light) !important; }
 .text-white { color: var(--color-white) !important; }
 .text-white-muted { color: rgba(255, 255, 255, 0.7) !important; }
 .text-ink-light { color: var(--color-ink-light); }
@@ -219,6 +228,24 @@ section {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .grid { gap: var(--space-lg); }
   
+  .py-5xl { padding-top: var(--space-3xl); padding-bottom: var(--space-3xl); }
   .py-4xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+  .py-3xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+  .py-2xl { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+  
+  h1, h2, h3 { margin-bottom: var(--space-xs); }
+  p { margin-bottom: var(--space-sm); }
+}
+
+/* --- Icon + Text Alignment --- */
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.icon-text svg, .icon-text .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
 }
 

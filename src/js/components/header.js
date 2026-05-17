@@ -4,11 +4,12 @@
  */
 
 const NAV_ITEMS = [
-  { label: 'Our Story',        href: '/our-story.html'        },
-  { label: 'Mangoes',          href: '/mangoes.html'          },
-  { label: 'Sink Test',        href: '/sink-test.html'        },
-  { label: 'How to Ripen',     href: '/how-to-ripen.html'     },
+  { label: 'Home',             href: '/'                      },
   { label: 'Community Drops',  href: '/community-drops.html'  },
+  { label: 'Our Story',        href: '/our-story.html'        },
+  { label: 'Our Mangoes',      href: '/mangoes.html'          },
+  { label: 'How to Ripen',     href: '/how-to-ripen.html'     },
+  { label: 'Sink Test',        href: '/sink-test.html'        },
   { label: 'Contact',          href: '/contact.html'          },
 ];
 
@@ -36,21 +37,18 @@ export function initHeader() {
     <header class="site-header" id="site-header">
       <div class="header-inner">
         <a href="/" class="logo">
-          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="18" fill="#F6B93B" opacity="0.15"/>
-            <path d="M20 6c-1 0-3 2-3 2s-1.5 3-1 6c.5 3 2 6 4 9s3 5 3 5 1-2 3-5 3.5-6 4-9c.5-3-1-6-1-6s-2-2-3-2c-1.5 0-2.5 1-3 1.5S21.5 6 20 6z" fill="#2E7D32"/>
-            <path d="M20 8c-.5 0-2 1.5-2 1.5S16.5 12 17 14.5c.4 2 1.5 4.5 3 7 1.5-2.5 2.6-5 3-7 .5-2.5-.5-5-.5-5S21 8.5 20 8z" fill="#4CAF50"/>
-          </svg>
-          <span class="logo-text">Mango<span>Porter</span></span>
+          <img src="/images/logo.png" alt="MangoPorter by NetraaNikhilam Farms" class="site-logo-img" style="height: 60px; width: auto; object-fit: contain;">
         </a>
 
         <nav class="nav-links" aria-label="Main Navigation">
           ${navLinksHTML}
         </nav>
 
-        <a href="/community-drops.html#society-finder" class="btn btn-primary btn-sm nav-cta">
-          Find My Society
-        </a>
+        <div style="display:flex; align-items:center; gap: var(--space-md);">
+          <a href="/community-drops.html#society-finder" class="btn btn-primary btn-sm nav-cta" style="margin-left: 0;">
+            Find My Society Drop
+          </a>
+        </div>
 
         <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu" aria-expanded="false">
           <span></span>
@@ -58,12 +56,15 @@ export function initHeader() {
           <span></span>
         </button>
       </div>
+      <div id="header-marquee-container" class="header-marquee-container hidden">
+        <div id="header-batch-indicator" class="header-marquee-content">Current batch: Loading...</div>
+      </div>
     </header>
 
     <div class="nav-backdrop" id="nav-backdrop"></div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
       ${mobileLinksHTML}
-      <a href="/community-drops.html#society-finder" class="btn btn-primary">Find My Society</a>
+      <a href="/community-drops.html#society-finder" class="btn btn-primary">Find My Society Drop</a>
     </nav>
   `;
 

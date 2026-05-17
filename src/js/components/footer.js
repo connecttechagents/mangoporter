@@ -50,7 +50,7 @@ export function initFooter() {
       </div>
 
       <div class="footer-bottom">
-        <span>© ${currentYear} MangoPorter by NetraaNikhilam Farms. All rights reserved.</span>
+        <span>© ${currentYear} MangoPorter (NetraaNikhilam Farms) — Chittoor → Bangalore Drops. All rights reserved.</span>
         <span>Farm-fresh mangoes, delivered with love 🥭</span>
       </div>
     </footer>

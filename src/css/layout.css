@@ -19,8 +19,41 @@
               color var(--duration-normal) var(--ease-out);
 }
 
+.header-marquee-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  background-color: transparent;
+  color: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 4px 0;
+  z-index: 999;
+  display: block;
+}
+
+.header-marquee-container.hidden {
+  display: none;
+}
+
+.header-marquee-content {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+  font-size: 0.85rem;
+  font-weight: var(--fw-semibold);
+  padding-left: 100%;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 /* Light Theme (For dark backgrounds) */
-.site-header.is-light:not(.is-scrolled) .logo {
+.site-header.is-light:not(.is-scrolled) .logo,
+.site-header.is-light:not(.is-scrolled) .header-marquee-container {
   color: var(--color-white);
 }
 
@@ -355,4 +388,16 @@
     gap: var(--space-md);
     text-align: center;
   }
+
+  .whatsapp-fab {
+    width: 50px;
+    height: 50px;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+  }
+  .whatsapp-fab svg {
+    width: 26px;
+    height: 26px;
+  }
 }
+
