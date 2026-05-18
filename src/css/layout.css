@@ -34,7 +34,8 @@
   display: block;
 }
 
-.header-marquee-container.hidden {
+.header-marquee-container.hidden,
+.site-header.is-scrolled .header-marquee-container {
   display: none;
 }
 
