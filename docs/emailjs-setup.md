@@ -24,8 +24,8 @@ Create two templates in the **Email Templates** tab:
 2. Open `src/js/services/email-service.js` and update the following:
 
 ```javascript
-const SERVICE_ID = 'your_actual_service_id';
-const PUBLIC_KEY = 'your_actual_public_key';
+const SERVICE_ID = 'service_mangoporter';
+const PUBLIC_KEY = 'm7UmQi_KZE8VICv9H';
 ```
 
 ## 4. Test

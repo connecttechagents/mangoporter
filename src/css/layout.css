@@ -26,7 +26,7 @@
   right: 0;
   transform: translateY(100%);
   background-color: transparent;
-  color: inherit;
+  color: var(--color-mango);
   overflow: hidden;
   white-space: nowrap;
   padding: 4px 0;
@@ -53,8 +53,7 @@
 }
 
 /* Light Theme (For dark backgrounds) */
-.site-header.is-light:not(.is-scrolled) .logo,
-.site-header.is-light:not(.is-scrolled) .header-marquee-container {
+.site-header.is-light:not(.is-scrolled) .logo {
   color: var(--color-white);
 }
 
@@ -80,11 +79,12 @@
 
 .header-inner {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-xl);
 }
 
 /* Logo */

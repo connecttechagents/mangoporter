@@ -26,15 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
 async function initSiteConfig() {
   try {
     const config = await fetchSiteConfig();
-    const batchData = config['Current Batch'];
-    if (batchData) {
-      const headerIndicator = document.getElementById('header-batch-indicator');
+    const marqueeText = config['MarqueeText'];
+    
+    const marqueeContainer = document.getElementById('header-marquee-container');
+    const headerIndicator = document.getElementById('header-batch-indicator');
+    
+    if (marqueeText && marqueeText.trim() !== '' && marqueeText.trim().toUpperCase() !== 'OFF') {
       if (headerIndicator) {
-        headerIndicator.textContent = `Current batch: ${batchData} | Orders close soon!`;
-        const marqueeContainer = document.getElementById('header-marquee-container');
-        if (marqueeContainer) {
-          marqueeContainer.classList.remove('hidden');
-        }
+        headerIndicator.textContent = marqueeText.trim();
+      }
+      if (marqueeContainer) {
+        marqueeContainer.classList.remove('hidden');
+      }
+    } else {
+      if (marqueeContainer) {
+        marqueeContainer.classList.add('hidden');
       }
     }
   } catch (error) {
@@ -147,10 +153,11 @@ function initContactForms() {
         
         const successMsg = document.getElementById('form-success');
         form.style.display = 'none';
-        if (successMsg) successMsg.classList.remove('hidden');
-        
-        // Scroll to success message
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (successMsg) {
+          successMsg.classList.remove('hidden');
+          // Scroll to success message
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       } catch (error) {
         console.error('Email sending failed:', error);
         alert('Sorry, there was an error sending your message. Please try again or contact us via WhatsApp.');

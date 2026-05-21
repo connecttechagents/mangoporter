@@ -37,7 +37,7 @@ export function initHeader() {
     <header class="site-header" id="site-header">
       <div class="header-inner">
         <a href="/" class="logo">
-          <img src="/images/logo.png" alt="MangoPorter by NetraaNikhilam Farms" class="site-logo-img" style="height: 60px; width: auto; object-fit: contain;">
+          <img src="/images/logo.png" alt="MangoPorter by NetraaNikhilam Farms" class="site-logo-img" style="height: 60px; width: auto; object-fit: contain; transform: scale(2.5) translateY(2px); transform-origin: left center;">
         </a>
 
         <nav class="nav-links" aria-label="Main Navigation">

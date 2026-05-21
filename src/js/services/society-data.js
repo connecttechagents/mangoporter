@@ -15,18 +15,22 @@ const MOCK_SOCIETIES = [
 ];
 
 export async function fetchSocieties() {
-  // --- HANDOVER NOTE ---
-  // To connect to a real Google Sheet:
-  // 1. Publish your Google Sheet to the web as CSV.
-  // 2. Use fetch('your-google-sheet-csv-url') here and parse it.
+  const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTrI7DDl8DEt-ZY9Lv4zy26AknitoFaK-KBD4n44flz6lkWODDPh6GU6ipdlyLoSg/pub?gid=799365168&single=true&output=csv';
   
-  console.log('[SocietyData] Fetching society data...');
-  
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(MOCK_SOCIETIES);
-    }, 500);
-  });
+  try {
+    const response = await fetch(CSV_URL);
+    const csvData = await response.text();
+    
+    // Simple CSV parser
+    const rows = csvData.split('\n').slice(1); // Remove header
+    return rows.filter(row => row.trim() !== '').map(row => {
+      const [name, area, whatsapp, status] = row.split(',').map(s => s ? s.trim() : '');
+      return { name, area, whatsapp, status };
+    });
+  } catch (err) {
+    console.error('Failed to fetch society data:', err);
+    return []; // Fallback to empty
+  }
 }
 
 export function searchSocieties(query, societies) {
